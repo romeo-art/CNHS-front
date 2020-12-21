@@ -1,0 +1,36 @@
+<div class="loginContainer">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover" routerLink="/sign-up" routerLinkActive="active">Sign Up </h2>
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img class="logoImage" src="../assets/logo.png" id="logo" alt="Caleriohan National High School Logo" />
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="email" formControlName="email">
+        <div *ngIf="email.invalid && (email.touched || email.dirty)">
+          <p id="emailValidator" *ngIf="email.errors?.required">email is required</p>
+          <p id="emailValidator" *ngIf="email.errors?.minlength">email must aleast 6 characters</p>
+        </div>
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="password"
+          formControlName="password">
+        <div *ngIf="password.invalid && (password.touched || password.dirty)">
+          <p id="passwordValidator" *ngIf="password.errors?.required">password is required</p>
+          <p id="passwordValidator" *ngIf="password.errors?.minlength">password must aleast 8 characters</p>
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="!loginForm.valid">
+      </form>
+
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+
+    </div>
+  </div>
+</div>

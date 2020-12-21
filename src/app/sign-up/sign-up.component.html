@@ -1,0 +1,30 @@
+<div class="signUpContainer">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="inactive underlineHover" routerLink="/sign-in" routerLinkActive="active"> Sign In </h2>
+      <h2 class="active">Sign Up </h2>
+
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img class="logoImage" src="../assets/logo.png" id="logo" alt="Caleriohan National High School Logo" />
+      </div>
+
+      <!-- Login Form -->
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <input type="text" id="fullname" class="fadeIn second" name="login" placeholder="Lastname, Firstname M.I."
+          formControlName="fullname">
+        <input type="number" id="age" placeholder="Age" formControlName="age">
+        <input type="text" id="address" placeholder="Address" formControlName="address">
+        <input type="tel" id="phone" placeholder="Phone #" formControlName="phone">
+        <input type="email" id="email" class="fadeIn third" name="email" placeholder="Email" formControlName="email">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password"
+          formControlName="password">
+        <input type="password" id="cpassword" class="fadeIn third" name="cpassword" placeholder="Repeat password"
+          formControlName="cpassword">
+        <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="!signUpForm.valid">
+      </form>
+
+    </div>
+  </div>
+</div>
