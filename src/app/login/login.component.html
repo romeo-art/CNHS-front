@@ -10,7 +10,7 @@
         <img class="logoImage" src="../assets/logo.png" id="logo" alt="Caleriohan National High School Logo" />
       </div>
 
-      <!-- Login Form -->
+      <!-- Login Form-->
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <input type="text" id="login" class="fadeIn second" name="login" placeholder="email" formControlName="email">
         <div *ngIf="email.invalid && (email.touched || email.dirty)">
